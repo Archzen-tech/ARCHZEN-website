@@ -1,0 +1,31 @@
+<svg width="489" height="482" viewBox="0 0 489 482" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="178.593" cy="176.562" rx="178.593" ry="176.562" transform="matrix(0.869209 -0.494445 0.505576 0.862782 0 176.609)" stroke="url(#paint0_linear_2124_2193)"/>
+<ellipse cx="178.593" cy="176.562" rx="178.593" ry="176.562" transform="matrix(0.869209 -0.494445 0.505576 0.862782 0 176.609)" stroke="url(#paint1_linear_2124_2193)"/>
+<ellipse cx="178.243" cy="176.252" rx="178.243" ry="176.252" transform="matrix(0.938936 -0.344092 0.353182 0.935555 15 137.198)" stroke="url(#paint2_radial_2124_2193)" stroke-width="4"/>
+<g filter="url(#filter0_f_2124_2193)">
+<ellipse cx="244.5" cy="241.144" rx="178.5" ry="175.87" stroke="url(#paint3_radial_2124_2193)" stroke-width="4"/>
+</g>
+<defs>
+<filter id="filter0_f_2124_2193" x="60" y="59.2734" width="369" height="363.741" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_2124_2193"/>
+</filter>
+<linearGradient id="paint0_linear_2124_2193" x1="178.593" y1="0" x2="178.593" y2="124.756" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#999999" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2124_2193" x1="272.005" y1="400.373" x2="187.77" y2="253.112" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#999999" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="paint2_radial_2124_2193" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(77.9145 30.0789) rotate(130.081) scale(94.4867 94.674)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#999999" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint3_radial_2124_2193" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(144.027 95.2872) rotate(130.183) scale(94.4237 94.6686)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#999999" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
