@@ -439,8 +439,15 @@ a,
         left: 0 !important;
         transform: translateY(-10px) !important;
         transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s !important;
-        margin-top: 0.75rem !important;
+        margin-top: 0 !important;
+        padding-top: 0.75rem !important;
         z-index: 1000 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+    /* Ensure the inner wrapper does not add non-hoverable margin */
+    .nav-dropdown .nav-dropdown-inner-wr {
+        margin-top: 0 !important;
     }
     /* Hover Opened State */
     .nav-dropdown:hover .nav-dropdown-list {
