@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-wf-domain="www.archzen.com.au" data-wf-page="67c995cf629758b15942fb16"
     data-wf-site="67c995cf629758b15942fb10" lang="en">
 
@@ -11,9 +11,10 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="css/webflow.css" rel="stylesheet" type="text/css" />
     <script src="js/init.js" type="text/javascript"></script>
-    <link href="resources/now%20logo.png"
+    <link href="resources/now_logo.png"
         rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css?v=12" />
+    <link rel="stylesheet" href="css/mobile.css?v=13" media="screen and (max-width: 991px)" />
 
     <style>
         .solutions-hero-section {
@@ -250,7 +251,7 @@
                     <div class="navbar-wr">
                         <div class="brand" style="display: flex; align-items: center; gap: 0.5rem;">
                             <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="resources/now%20logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
+                                <img src="resources/now_logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
                                 <img src="resources/archzen_logo_text.png" alt="ArchZen" class="nav-logo-text" />
                             </a>
                         </div>
@@ -560,12 +561,17 @@
                         max-height: 0;
                         overflow: hidden;
                         opacity: 0;
+                <style>
+                    .privacy-policy-expandable, .policy-expandable {
+                        max-height: 0;
+                        overflow: hidden;
+                        opacity: 0;
                         transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
                         display: flex;
                         flex-direction: column;
                         gap: 2rem;
                     }
-                    .privacy-policy-expandable.is-expanded {
+                    .privacy-policy-expandable.is-expanded, .policy-expandable.is-expanded {
                         max-height: 8000px;
                         opacity: 1;
                     }
@@ -829,27 +835,536 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        const readMoreBtn = document.getElementById("read-more-privacy-btn");
-                        const expandableContent = document.getElementById("privacy-policy-expandable-content");
-                        const arrow = document.getElementById("read-more-arrow");
+            <!-- 5. Website Terms & Conditions Section -->
+            <section id="terms-conditions" class="category-section" style="background: #020208; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 6rem; padding-bottom: 6rem;">
+                <div class="category-container" style="max-width: 800px; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem;">
+                    <div style="text-align: center; margin-bottom: 4rem;">
+                        <p class="category-tag" style="color: #037BCF; font-size: 0.9rem; letter-spacing: 0.15em; font-family: monospace; text-transform: uppercase;">Legal Agreement</p>
+                        <h2 class="category-title" style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #FFFFFF;">Website Terms &amp; Conditions</h2>
+                        <p style="color: #6C7A89; font-size: 0.95rem;">Effective Date: 7 July 2026</p>
+                    </div>
 
-                        // If user goes to privacy policy section via anchor link (#privacy-policy), auto-expand
-                        if (window.location.hash === "#privacy-policy") {
-                            expandableContent.classList.add("is-expanded");
-                            readMoreBtn.querySelector("span").textContent = "Read Less";
-                            arrow.style.transform = "rotate(180deg)";
-                        }
+                    <div class="privacy-policy-content" style="color: #BABABA; font-size: 1rem; line-height: 1.7; display: flex; flex-direction: column; gap: 2rem;">
+                        <p>Welcome to the ArchZen Pty Ltd website ("Website"). By accessing or using this Website, you agree to be bound by these Website Terms &amp; Conditions ("Terms"). If you do not agree with these Terms, please discontinue use of this Website.</p>
+                        
+                        <p>These Terms apply solely to your use of the Website and do not replace or override any separate service agreement, proposal, quotation, Statement of Work (SOW), Master Services Agreement (MSA), or other contract entered into with ArchZen Pty Ltd.</p>
 
-                        readMoreBtn.addEventListener("click", function() {
-                            const isExpanded = expandableContent.classList.toggle("is-expanded");
-                            readMoreBtn.querySelector("span").textContent = isExpanded ? "Read Less" : "Read More";
-                            arrow.style.transform = isExpanded ? "rotate(180deg)" : "rotate(0deg)";
-                        });
-                    });
-                </script>
+                        <!-- Read More Button Container -->
+                        <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+                            <button id="read-more-terms-btn" class="read-more-btn">
+                                <span>Read More</span>
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.3s ease;" id="read-more-terms-arrow"><path d="M5 7L1 3h8L5 7z" fill="currentColor"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Collapsible Part of Terms -->
+                        <div id="terms-conditions-expandable-content" class="policy-expandable">
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">1. About Us</h3>
+                                <p>This Website is owned and operated by ArchZen Pty Ltd ("ArchZen", "we", "our", or "us").</p>
+                                <p>ArchZen provides professional services including:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Managed IT Services</li>
+                                    <li>Cybersecurity Services</li>
+                                    <li>Cloud Solutions</li>
+                                    <li>Microsoft 365 Services</li>
+                                    <li>Google Workspace Services</li>
+                                    <li>AI Solutions</li>
+                                    <li>Business Process Automation</li>
+                                    <li>IT Consulting</li>
+                                    <li>Technology Strategy</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">2. Acceptance of These Terms</h3>
+                                <p>By accessing this Website you acknowledge that:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>you have read these Terms;</li>
+                                    <li>you agree to comply with them;</li>
+                                    <li>you will use the Website lawfully and responsibly.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">If you are using this Website on behalf of a business, you confirm that you have authority to bind that business to these Terms.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">3. Website Content</h3>
+                                <p>The information published on this Website is provided for general informational purposes only.</p>
+                                <p>While we make reasonable efforts to ensure information is accurate and current, we do not guarantee that all information is complete, accurate, or suitable for your specific circumstances.</p>
+                                <p>Technology, cybersecurity threats, software licensing, pricing, and service offerings change regularly.</p>
+                                <p>Content may be updated without prior notice.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">4. Professional Advice</h3>
+                                <p>Information contained on this Website does not constitute:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>legal advice;</li>
+                                    <li>financial advice;</li>
+                                    <li>cybersecurity certification;</li>
+                                    <li>compliance certification;</li>
+                                    <li>business advice;</li>
+                                    <li>technical advice specific to your environment.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Every organisation has different technical requirements.</p>
+                                <p>Professional advice should always be obtained before making business, security, or technology decisions.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">5. Intellectual Property</h3>
+                                <p>Unless otherwise stated, all Website content is owned by ArchZen Pty Ltd or licensed to us. This includes:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>logos</li>
+                                    <li>branding</li>
+                                    <li>text</li>
+                                    <li>graphics</li>
+                                    <li>icons</li>
+                                    <li>documents</li>
+                                    <li>videos</li>
+                                    <li>images</li>
+                                    <li>website design</li>
+                                    <li>downloadable resources</li>
+                                    <li>AI-generated content produced by ArchZen</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">You may view or print Website content for personal or internal business use only.</p>
+                                <p>You must not, without written permission: reproduce; copy; republish; distribute; modify; sell; commercially exploit; or create derivative works from any content on this Website.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">6. Acceptable Website Use</h3>
+                                <p>You agree not to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>interfere with Website operation;</li>
+                                    <li>introduce malicious software;</li>
+                                    <li>attempt unauthorised access;</li>
+                                    <li>exploit Website vulnerabilities;</li>
+                                    <li>scrape Website content using automated tools without permission;</li>
+                                    <li>overload or disrupt Website infrastructure;</li>
+                                    <li>impersonate another individual or organisation;</li>
+                                    <li>misuse contact forms;</li>
+                                    <li>use the Website for unlawful purposes.</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">7. AI-Generated Content</h3>
+                                <p>Some content available on this Website may have been created or enhanced using Artificial Intelligence technologies.</p>
+                                <p>While reasonable efforts are made to verify accuracy, AI-generated information may occasionally contain inaccuracies or omissions.</p>
+                                <p>Users should independently verify important information before relying upon it.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">8. Third-Party Links</h3>
+                                <p>This Website may contain links to third-party websites. These links are provided for convenience only.</p>
+                                <p>ArchZen does not control or endorse third-party websites and accepts no responsibility for their: content; privacy practices; availability; accuracy; or products or services.</p>
+                                <p>Accessing third-party websites is entirely at your own risk.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">9. Downloads</h3>
+                                <p>Resources made available for download are provided "as is."</p>
+                                <p>Although we take reasonable precautions to ensure downloadable files are safe, users remain responsible for scanning files using appropriate security software before use.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">10. Website Availability</h3>
+                                <p>We aim to keep this Website available at all times. However, we do not guarantee uninterrupted access.</p>
+                                <p>The Website may occasionally be unavailable due to: maintenance; upgrades; technical faults; cyber incidents; or events beyond our reasonable control.</p>
+                                <p>We reserve the right to modify or discontinue any part of the Website without notice.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">11. Limitation of Liability</h3>
+                                <p>To the maximum extent permitted by law, ArchZen Pty Ltd excludes liability for any direct, indirect, incidental, consequential, or special loss or damage arising from: use of this Website; inability to access this Website; reliance on Website content; third-party links; software downloads; or inaccuracies or omissions.</p>
+                                <p>Nothing in these Terms excludes any rights that cannot lawfully be excluded under Australian law.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">12. Privacy</h3>
+                                <p>Your use of this Website is also governed by our Privacy Policy.</p>
+                                <p>Please review our Privacy Policy to understand how we collect, use, and protect personal information.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">13. Changes to These Terms</h3>
+                                <p>ArchZen may update these Website Terms &amp; Conditions at any time.</p>
+                                <p>The latest version will always be published on this Website.</p>
+                                <p>Continued use of the Website after changes are published constitutes acceptance of the revised Terms.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">14. Governing Law</h3>
+                                <p>These Terms are governed by the laws of the State of Victoria, Australia.</p>
+                                <p>Any disputes arising in connection with these Terms or the Website shall be subject to the exclusive jurisdiction of the courts of Victoria.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">15. Contact Us</h3>
+                                <p>If you have any questions regarding these Website Terms &amp; Conditions, please contact us through our Contact page.</p>
+                                <p style="margin-top: 1rem; color: #FFFFFF; font-weight: bold; line-height: 1.5;">
+                                    ArchZen Pty Ltd<br/>
+                                    Website: <a href="https://www.archzen.com.au" style="color: #037BCF; text-decoration: none;">https://www.archzen.com.au</a><br/>
+                                    Email: <a href="mailto:legal@archzen.com.au" style="color: #037BCF; text-decoration: none;">legal@archzen.com.au</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. AI Usage Policy Section -->
+            <section id="ai-usage-policy" class="category-section" style="background: #020208; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 6rem; padding-bottom: 6rem;">
+                <div class="category-container" style="max-width: 800px; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem;">
+                    <div style="text-align: center; margin-bottom: 4rem;">
+                        <p class="category-tag" style="color: #037BCF; font-size: 0.9rem; letter-spacing: 0.15em; font-family: monospace; text-transform: uppercase;">Company Policy</p>
+                        <h2 class="category-title" style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #FFFFFF;">AI Usage Policy</h2>
+                        <p style="color: #6C7A89; font-size: 0.95rem;">Effective Date: 7 July 2026</p>
+                    </div>
+
+                    <div class="privacy-policy-content" style="color: #BABABA; font-size: 1rem; line-height: 1.7; display: flex; flex-direction: column; gap: 2rem;">
+                        <p>At ArchZen Pty Ltd ("ArchZen", "we", "our", or "us"), we believe Artificial Intelligence (AI) should enhance human expertise—not replace it.</p>
+                        
+                        <p>This AI Usage Policy explains how we use AI technologies within our business and when delivering services to clients. Our goal is to use AI responsibly, ethically, securely, and transparently while maintaining the highest standards of professionalism, privacy, and cybersecurity.</p>
+
+                        <!-- Read More Button Container -->
+                        <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+                            <button id="read-more-ai-btn" class="read-more-btn">
+                                <span>Read More</span>
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.3s ease;" id="read-more-ai-arrow"><path d="M5 7L1 3h8L5 7z" fill="currentColor"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Collapsible Part of AI Usage Policy -->
+                        <div id="ai-usage-expandable-content" class="policy-expandable">
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">1. Scope</h3>
+                                <p>This policy applies to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>ArchZen employees</li>
+                                    <li>Contractors</li>
+                                    <li>Consultants</li>
+                                    <li>Service providers acting on behalf of ArchZen</li>
+                                    <li>AI-powered services delivered to clients</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">2. Our AI Principles</h3>
+                                <p>ArchZen is committed to the responsible use of AI based on the following principles:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Human oversight</li>
+                                    <li>Transparency</li>
+                                    <li>Security</li>
+                                    <li>Privacy</li>
+                                    <li>Accountability</li>
+                                    <li>Accuracy</li>
+                                    <li>Ethical use</li>
+                                    <li>Continuous improvement</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">AI supports our team—it does not replace professional judgement.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">3. How We Use AI</h3>
+                                <p>AI may be used to improve efficiency and service delivery in areas such as:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Technical documentation</li>
+                                    <li>IT support assistance</li>
+                                    <li>Cybersecurity analysis</li>
+                                    <li>Security awareness content</li>
+                                    <li>Knowledge management</li>
+                                    <li>Business process automation</li>
+                                    <li>Workflow automation</li>
+                                    <li>Software development assistance</li>
+                                    <li>Content creation</li>
+                                    <li>Report generation</li>
+                                    <li>Data summarisation</li>
+                                    <li>Meeting summaries</li>
+                                    <li>Research assistance</li>
+                                    <li>Proposal preparation</li>
+                                    <li>Customer communication</li>
+                                    <li>AI-powered business solutions for clients</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Every AI-assisted output is subject to appropriate review before being relied upon or delivered where human verification is required.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">4. Human Review</h3>
+                                <p>Human expertise remains central to every service we provide. Where AI is used:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Qualified professionals review outputs where appropriate.</li>
+                                    <li>Critical business decisions are never made solely by AI.</li>
+                                    <li>Security recommendations are validated before implementation.</li>
+                                    <li>Client deliverables are reviewed for quality and accuracy.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Clients should independently assess AI-generated outputs before making significant legal, financial, operational, or strategic decisions.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">5. Privacy and Confidentiality</h3>
+                                <p>Protecting client information is one of our highest priorities. When using AI technologies, ArchZen aims to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Minimise the amount of confidential information shared.</li>
+                                    <li>Avoid submitting sensitive client information to public AI services unless appropriate safeguards are in place.</li>
+                                    <li>Apply appropriate security controls when selecting AI platforms.</li>
+                                    <li>Respect contractual confidentiality obligations.</li>
+                                    <li>Handle information in accordance with our Privacy Policy.</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">6. Security</h3>
+                                <p>AI tools used by ArchZen are selected with consideration for security and business suitability. Where appropriate, we consider factors including:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Vendor reputation</li>
+                                    <li>Security controls</li>
+                                    <li>Privacy practices</li>
+                                    <li>Data handling processes</li>
+                                    <li>Access controls</li>
+                                    <li>Regulatory obligations</li>
+                                    <li>Business requirements</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Not every publicly available AI platform is suitable for business use.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">7. Responsible AI Use</h3>
+                                <p>ArchZen will not knowingly use AI to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Generate malicious software.</li>
+                                    <li>Conduct cyber attacks.</li>
+                                    <li>Facilitate fraud or deception.</li>
+                                    <li>Create misleading or intentionally false information.</li>
+                                    <li>Infringe intellectual property rights.</li>
+                                    <li>Circumvent applicable laws or regulations.</li>
+                                    <li>Engage in discriminatory or unethical practices.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">We expect our employees, contractors, and clients to use AI responsibly and lawfully.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">8. AI Limitations</h3>
+                                <p>Although AI technologies continue to improve, they have limitations. AI-generated content may: contain factual inaccuracies; reflect outdated information; misunderstand context; produce incomplete results; or require technical verification.</p>
+                                <p>AI should be considered an assistant—not an authoritative source.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">9. Client AI Solutions</h3>
+                                <p>Where ArchZen designs, implements, or manages AI solutions for clients, we work collaboratively to ensure those solutions align with the client's objectives, operational requirements, and risk profile. Depending on the engagement, our AI services may include:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>AI strategy and consulting</li>
+                                    <li>AI agent implementation</li>
+                                    <li>Workflow automation</li>
+                                    <li>AI integrations</li>
+                                    <li>CRM automation</li>
+                                    <li>Customer service automation</li>
+                                    <li>Knowledge base solutions</li>
+                                    <li>Business process optimisation</li>
+                                    <li>Microsoft Copilot enablement</li>
+                                    <li>Generative AI adoption guidance</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Clients remain responsible for reviewing outputs generated by AI systems used within their own organisations.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">10. Intellectual Property</h3>
+                                <p>AI may assist in creating documentation, code, reports, designs, workflows, and other materials. Unless otherwise agreed in writing, intellectual property rights relating to client deliverables will be governed by the applicable agreement between ArchZen and the client.</p>
+                                <p>ArchZen retains ownership of its proprietary methodologies, templates, tools, frameworks, and internal processes.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">11. Compliance</h3>
+                                <p>ArchZen seeks to use AI in accordance with applicable Australian laws, contractual obligations, industry standards, and recognised ethical principles.</p>
+                                <p>As AI technologies and regulatory expectations evolve, we will continue reviewing and improving our governance practices.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">12. Policy Updates</h3>
+                                <p>Artificial Intelligence is evolving rapidly. This policy may be updated periodically to reflect changes in: technology; legislation; industry standards; security practices; or business operations.</p>
+                                <p>The latest version will always be available on our website.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">13. Contact Us</h3>
+                                <p>If you have questions about this AI Usage Policy or how ArchZen uses Artificial Intelligence in delivering its services, please contact us through our Contact page.</p>
+                                <p style="margin-top: 1rem; color: #FFFFFF; font-weight: bold; line-height: 1.5;">
+                                    ArchZen Pty Ltd<br/>
+                                    Website: <a href="https://www.archzen.com.au" style="color: #037BCF; text-decoration: none;">https://www.archzen.com.au</a><br/>
+                                    Email: <a href="mailto:legal@archzen.com.au" style="color: #037BCF; text-decoration: none;">legal@archzen.com.au</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Acceptable Use Policy Section -->
+            <section id="acceptable-use-policy" class="category-section" style="background: #020208; border-top: 1px solid rgba(255, 255, 255, 0.03); padding-top: 6rem; padding-bottom: 6rem;">
+                <div class="category-container" style="max-width: 800px; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem;">
+                    <div style="text-align: center; margin-bottom: 4rem;">
+                        <p class="category-tag" style="color: #037BCF; font-size: 0.9rem; letter-spacing: 0.15em; font-family: monospace; text-transform: uppercase;">Service Terms</p>
+                        <h2 class="category-title" style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #FFFFFF;">Acceptable Use Policy</h2>
+                        <p style="color: #6C7A89; font-size: 0.95rem;">Effective Date: 7 July 2026</p>
+                    </div>
+
+                    <div class="privacy-policy-content" style="color: #BABABA; font-size: 1rem; line-height: 1.7; display: flex; flex-direction: column; gap: 2rem;">
+                        <p>This Acceptable Use Policy ("Policy") outlines the acceptable use of services provided by ArchZen Pty Ltd ("ArchZen", "we", "our", or "us").</p>
+                        
+                        <p>Our goal is to provide secure, reliable, and professional technology services while protecting our clients, employees, partners, infrastructure, and the broader online community.</p>
+
+                        <p>This Policy applies to all users of ArchZen's services, including clients, employees, contractors, authorised users, and any person accessing services provided by ArchZen.</p>
+
+                        <!-- Read More Button Container -->
+                        <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+                            <button id="read-more-acceptable-btn" class="read-more-btn">
+                                <span>Read More</span>
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.3s ease;" id="read-more-acceptable-arrow"><path d="M5 7L1 3h8L5 7z" fill="currentColor"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Collapsible Part of Acceptable Use Policy -->
+                        <div id="acceptable-use-expandable-content" class="policy-expandable">
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">1. Services Covered</h3>
+                                <p>This Policy applies to all services provided by ArchZen, including but not limited to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>Managed IT Services</li>
+                                    <li>Cybersecurity Services</li>
+                                    <li>Microsoft 365 Services</li>
+                                    <li>Google Workspace Services</li>
+                                    <li>Cloud Services</li>
+                                    <li>Remote Monitoring and Management (RMM)</li>
+                                    <li>Backup and Disaster Recovery</li>
+                                    <li>Email Services</li>
+                                    <li>Website Hosting and Management</li>
+                                    <li>AI Solutions</li>
+                                    <li>AI Agents</li>
+                                    <li>Business Process Automation</li>
+                                    <li>Workflow Automation</li>
+                                    <li>Professional Services</li>
+                                    <li>Consulting Services</li>
+                                    <li>Remote Support</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">2. Lawful Use</h3>
+                                <p>Users must use ArchZen's services only for lawful purposes. You must comply with all applicable Australian laws and regulations, as well as any relevant international laws where applicable.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">3. Prohibited Activities</h3>
+                                <p>Users must not use ArchZen's services to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>engage in unlawful activity;</li>
+                                    <li>commit fraud or deception;</li>
+                                    <li>impersonate another individual or organisation;</li>
+                                    <li>distribute malware, ransomware, spyware, viruses, or other malicious software;</li>
+                                    <li>conduct phishing or social engineering attacks;</li>
+                                    <li>perform unauthorised vulnerability scanning or penetration testing;</li>
+                                    <li>gain unauthorised access to systems or data;</li>
+                                    <li>interfere with another person's network or services;</li>
+                                    <li>launch denial-of-service (DoS or DDoS) attacks;</li>
+                                    <li>send spam or unsolicited commercial communications;</li>
+                                    <li>distribute illegal, offensive, abusive, or harmful content;</li>
+                                    <li>infringe copyright, trademarks, or intellectual property rights;</li>
+                                    <li>use services for cryptocurrency mining without prior written approval;</li>
+                                    <li>violate the privacy or confidentiality of others.</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">4. Account Security</h3>
+                                <p>Users are responsible for maintaining the security of their own accounts. This includes:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>keeping passwords confidential;</li>
+                                    <li>enabling Multi-Factor Authentication (MFA) where available;</li>
+                                    <li>protecting authentication devices;</li>
+                                    <li>notifying ArchZen immediately of suspected compromise;</li>
+                                    <li>ensuring authorised users use services responsibly.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">ArchZen is not responsible for losses arising from compromised credentials where reasonable security practices have not been followed.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">5. Responsible Use of AI Services</h3>
+                                <p>Where ArchZen provides AI-powered services or automation solutions, users must not use those services to:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>create malicious content;</li>
+                                    <li>generate malware;</li>
+                                    <li>produce deceptive or fraudulent material;</li>
+                                    <li>violate applicable laws;</li>
+                                    <li>infringe intellectual property rights;</li>
+                                    <li>create discriminatory or harmful content;</li>
+                                    <li>bypass security controls;</li>
+                                    <li>intentionally spread misinformation.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Users remain responsible for reviewing AI-generated outputs before relying upon them.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">6. Security Cooperation</h3>
+                                <p>Clients agree to cooperate with reasonable security recommendations made by ArchZen. Examples include:</p>
+                                <ul style="list-style-type: disc; margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li>enabling Multi-Factor Authentication;</li>
+                                    <li>applying critical security updates;</li>
+                                    <li>replacing unsupported software;</li>
+                                    <li>maintaining supported operating systems;</li>
+                                    <li>implementing reasonable security controls appropriate to the business.</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">Where clients choose not to implement recommended security measures, ArchZen cannot guarantee protection against avoidable security incidents.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">7. Monitoring</h3>
+                                <p>To protect our infrastructure and services, ArchZen may monitor systems, logs, and service usage where reasonably necessary to: maintain service reliability; investigate security incidents; prevent misuse; comply with legal obligations; or protect clients and infrastructure.</p>
+                                <p>Monitoring is conducted responsibly and in accordance with applicable privacy laws and contractual obligations.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">8. Suspension of Services</h3>
+                                <p>ArchZen may temporarily suspend access to some or all services where we reasonably believe: this Policy has been breached; services are being used unlawfully; there is a cybersecurity risk; urgent maintenance is required; continued operation may cause harm to clients, ArchZen, or third parties; or suspension is required by law.</p>
+                                <p>Where practicable, we will notify affected clients before or as soon as reasonably possible after suspension.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">9. Termination</h3>
+                                <p>Repeated or serious breaches of this Policy may result in: suspension of services; termination of services; removal of access; reporting to relevant authorities where required by law; or legal action where appropriate.</p>
+                                <p>Termination under this Policy does not affect any other rights available to ArchZen under applicable agreements or Australian law.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">10. Third-Party Services</h3>
+                                <p>Many ArchZen services integrate with third-party platforms such as Microsoft, Google, Cloudflare, backup providers, cloud infrastructure providers, and other technology vendors. Users must also comply with the applicable terms and acceptable use requirements of those providers.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">11. Limitation of Liability</h3>
+                                <p>ArchZen will take reasonable steps to provide secure and reliable services. However, we are not responsible for loss or damage arising from: client misuse of services; unauthorised access caused by compromised credentials; failure to implement recommended security controls; actions of third-party service providers; or events beyond our reasonable control.</p>
+                                <p>Nothing in this Policy excludes rights that cannot lawfully be excluded under Australian law.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">12. Changes to This Policy</h3>
+                                <p>Technology and cybersecurity risks evolve continuously. ArchZen may update this Acceptable Use Policy from time to time.</p>
+                                <p>The latest version will always be available on our website.</p>
+                                <p>Continued use of our services after changes are published constitutes acceptance of the updated Policy.</p>
+                            </div>
+
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem;">
+                                <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">13. Contact Us</h3>
+                                <p>If you have any questions regarding this Acceptable Use Policy, please contact us through our Contact page.</p>
+                                <p style="margin-top: 1rem; color: #FFFFFF; font-weight: bold; line-height: 1.5;">
+                                    ArchZen Pty Ltd<br/>
+                                    Website: <a href="https://www.archzen.com.au" style="color: #037BCF; text-decoration: none;">https://www.archzen.com.au</a><br/>
+                                    Email: <a href="mailto:legal@archzen.com.au" style="color: #037BCF; text-decoration: none;">legal@archzen.com.au</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- Call to Action Section -->
@@ -873,7 +1388,7 @@
             <div class="container" style="display: flex; flex-direction: column; gap: 3rem;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
                     <div class="footer-logo-wr" style="display: flex; align-items: center; gap: 0.5rem;">
-                        <img src="resources/now%20logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
+                        <img src="resources/now_logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
                         <img src="resources/archzen_logo_text.png" alt="ArchZen" class="nav-logo-text" />
                     </div>
                     <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
@@ -889,8 +1404,14 @@
                     <div class="text-color-light-grey" style="font-size: 0.85rem;">
                         <p>© 2026 ArchZen Compliance Services. All rights reserved.</p>
                     </div>
-                    <div style="display: flex; gap: 1.5rem; align-items: center;">
-                        <a href="compliance-privacy.html#privacy-policy" style="color: #BABABA; font-size: 0.85rem; text-decoration: none;">PRIVACY POLICY</a>
+                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <a href="compliance-privacy.html#privacy-policy" style="color: #BABABA; font-size: 0.85rem; text-decoration: none; text-transform: uppercase;">Privacy Policy</a>
+                        <span style="color: #333;">|</span>
+                        <a href="compliance-privacy.html#terms-conditions" style="color: #BABABA; font-size: 0.85rem; text-decoration: none; text-transform: uppercase;">Terms &amp; Conditions</a>
+                        <span style="color: #333;">|</span>
+                        <a href="compliance-privacy.html#ai-usage-policy" style="color: #BABABA; font-size: 0.85rem; text-decoration: none; text-transform: uppercase;">AI Usage Policy</a>
+                        <span style="color: #333;">|</span>
+                        <a href="compliance-privacy.html#acceptable-use-policy" style="color: #BABABA; font-size: 0.85rem; text-decoration: none; text-transform: uppercase;">Acceptable Use</a>
                         <span style="color: #333;">|</span>
                         <a href="mailto:enquiries@archzen.com.au" style="color: #BABABA; font-size: 0.85rem; text-decoration: none;">enquiries@archzen.com.au</a>
                     </div>
@@ -911,6 +1432,37 @@
     <script src="js/webflow.81c3df57.aa0bb3188abb363d.js"
         type="text/javascript" integrity="sha384-uScabh9j8MNI167300pWvkWwyzUwTolouTPamI0QPa3BUI4m9XgthkYYsAsEgI/f"
         crossorigin="anonymous"></script>
+    <script src="js/script.js?v=7"></script>
+    <script src="js/mobile.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to handle read more toggle
+            function setupToggle(btnId, contentId, arrowId, hash) {
+                const btn = document.getElementById(btnId);
+                const content = document.getElementById(contentId);
+                const arrow = document.getElementById(arrowId);
+
+                if (!btn || !content || !arrow) return;
+
+                if (window.location.hash === hash) {
+                    content.classList.add("is-expanded");
+                    btn.querySelector("span").textContent = "Read Less";
+                    arrow.style.transform = "rotate(180deg)";
+                }
+
+                btn.addEventListener("click", function() {
+                    const isExpanded = content.classList.toggle("is-expanded");
+                    btn.querySelector("span").textContent = isExpanded ? "Read Less" : "Read More";
+                    arrow.style.transform = isExpanded ? "rotate(180deg)" : "rotate(0deg)";
+                });
+            }
+
+            setupToggle("read-more-privacy-btn", "privacy-policy-expandable-content", "read-more-arrow", "#privacy-policy");
+            setupToggle("read-more-terms-btn", "terms-conditions-expandable-content", "read-more-terms-arrow", "#terms-conditions");
+            setupToggle("read-more-ai-btn", "ai-usage-expandable-content", "read-more-ai-arrow", "#ai-usage-policy");
+            setupToggle("read-more-acceptable-btn", "acceptable-use-expandable-content", "read-more-acceptable-arrow", "#acceptable-use-policy");
+        });
+    </script>
 </body>
 
 </html>

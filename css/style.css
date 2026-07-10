@@ -417,6 +417,7 @@ a,
     height: 9.2rem !important;
     width: auto !important;
 }
+
 /* Testimonial profile pictures styling */
 .home_quote-author-img {
     border-radius: 50% !important;
@@ -428,6 +429,7 @@ a,
     .nav-dropdown {
         position: relative !important;
     }
+
     /* Hidden State with Transition */
     .nav-dropdown .nav-dropdown-list {
         display: block !important;
@@ -445,10 +447,12 @@ a,
         background-color: transparent !important;
         box-shadow: none !important;
     }
+
     /* Ensure the inner wrapper does not add non-hoverable margin */
     .nav-dropdown .nav-dropdown-inner-wr {
         margin-top: 0 !important;
     }
+
     /* Hover Opened State */
     .nav-dropdown:hover .nav-dropdown-list {
         opacity: 1 !important;

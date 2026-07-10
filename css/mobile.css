@@ -1,0 +1,232 @@
+/* mobile.css - Mobile specific overrides (max-width: 991px) */
+
+html,
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+.home_hero {
+    grid-template-columns: 1fr !important;
+    flex-flow: column !important;
+    display: flex !important;
+    grid-column-gap: 2rem !important;
+    grid-row-gap: 2rem !important;
+}
+
+.home_hero-content {
+    width: 100% !important;
+}
+
+/* Hide desktop sticky sidebar navigation & expert widget on tablet/mobile */
+.home_sticky-box,
+.home_sticky-absolute {
+    display: none !important;
+}
+
+/* Custom Hamburger Styles & Drawer Overlay */
+
+/* Hide default Webflow menu and button on mobile view */
+.w-nav-menu,
+.w-nav-button,
+.nav-menu,
+.nav-burger-link {
+    display: none !important;
+}
+
+/* Custom Hamburger Button - Fixed at top-right of navbar */
+.custom-mobile-burger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10002;
+    position: relative;
+    outline: none;
+}
+
+.custom-mobile-burger span {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform-origin: center;
+}
+
+/* Transform Hamburger into an "X" when active */
+.custom-mobile-burger.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.custom-mobile-burger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-mobile-burger.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Semi-transparent dark blur background overlay */
+.custom-mobile-overlay {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(4, 4, 16, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.custom-mobile-overlay.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Slide-in Menu Drawer */
+.custom-mobile-menu {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #040410;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10001;
+    padding: 6rem 2.5rem 3rem 2.5rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.custom-mobile-menu.is-active {
+    right: 0;
+}
+
+/* Menu list structure */
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.mobile-nav-link {
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.is-active {
+    color: #04BEE0;
+}
+
+/* Submenu container and slide expand animations */
+.mobile-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-left: 1rem;
+    margin-top: 0;
+}
+
+.mobile-submenu.is-expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.mobile-submenu-link {
+    color: #bababa;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    display: block;
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+}
+
+.mobile-submenu-link:hover {
+    color: #ffffff;
+}
+
+/* Arrow state and rotation animation */
+.mobile-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+    color: #04BEE0;
+    pointer-events: none;
+}
+
+.mobile-nav-link.is-active .mobile-arrow {
+    transform: rotate(90deg);
+}
+
+/* Force Hero 3D logo video into normal document flow on mobile to stack below the button */
+.home_hero-lottie-wr {
+    height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 9.5rem !important;
+    /* Spacing below the button */
+}
+
+.home_hero-lottie-absolute {
+    position: relative !important;
+    inset: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.home_hero-video {
+    width: 15rem !important;
+    height: 15rem !important;
+}
+
+/* Hide absolute desktop hero video on mobile/tablet, show relative mobile logo video */
+.home_hero-video-wr {
+    display: none !important;
+}
+
+.hide-on-desktop {
+    display: block !important;
+}

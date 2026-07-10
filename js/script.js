@@ -124,11 +124,11 @@ function setRelAttribute() {
     for (var i = 0; i < elems.length; i++) {
         var elem = elems[i];
         var re = /archzen.com.au/;
-        var isInternal = re.test(elem.href) || 
-                         elem.hostname === window.location.hostname || 
-                         elem.href.startsWith('file://') || 
-                         elem.href.startsWith('/') || 
-                         !elem.href.startsWith('http');
+        var isInternal = re.test(elem.href) ||
+            elem.hostname === window.location.hostname ||
+            elem.href.startsWith('file://') ||
+            elem.href.startsWith('/') ||
+            !elem.href.startsWith('http');
         var isExcludedLink = checkExcludedLink(elem.href);
         var hasExcludeAttribute = elem.hasAttribute('data-exclude');
 
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Manual triggers for navigation buttons using CAPTURE phase to bypass Webflow event stopPropagation
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const prevT = e.target.closest('[swiper="prev-t"]');
             const nextT = e.target.closest('[swiper="next-t"]');
             const prevF = e.target.closest('[swiper="prev-f"]');
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, true); // Capture phase is key!
 
         // Manual triggers for nav menu links to bypass Webflow click prevention on external pages
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const navLink = e.target.closest('.nav-dropdown-link, .nav-dropdown-toggle, .nav-link, .footer-link');
             if (navLink) {
                 const href = navLink.getAttribute('href');

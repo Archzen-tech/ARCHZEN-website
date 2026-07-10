@@ -15,9 +15,10 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="css/webflow.css" rel="stylesheet" type="text/css" />
     <script src="js/init.js" type="text/javascript"></script>
-    <link href="resources/now%20logo.png"
+    <link href="resources/now_logo.png"
         rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css?v=12" />
+    <link rel="stylesheet" href="css/mobile.css?v=13" media="screen and (max-width: 991px)" />
 
     <style>
         .contact-hero-section {
@@ -290,12 +291,12 @@
     <div class="page-wrapper">
         <!-- Header / Navigation Bar (matches index.html exactly) -->
         <div class="nav-wr">
-            <div role="banner" class="navbar w-nav" style="background: rgba(4, 4, 16, 0.7); backdrop-filter: blur(12px);">
+            <div data-w-id="16a33179-36c8-d806-b49b-97b66be518c0" data-animation="default" data-collapse="medium" data-duration="500" data-easing="ease-out" data-easing2="ease-in" role="banner" class="navbar w-nav" style="background: rgba(4, 4, 16, 0.7); backdrop-filter: blur(12px);">
                 <div class="container">
                     <div class="navbar-wr">
                         <div class="brand" style="display: flex; align-items: center; gap: 0.5rem;">
                             <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="resources/now%20logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
+                                <img src="resources/now_logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
                                 <img src="resources/archzen_logo_text.png" alt="ArchZen" class="nav-logo-text" />
                             </a>
                         </div>
@@ -303,7 +304,7 @@
                             <div class="nav-menu-inner">
                                 <div class="nav-menu-links-wr">
                                     <div data-delay="0" data-hover="true" class="nav-dropdown w-dropdown">
-                                        <a href="services.html" class="nav-dropdown-toggle w-dropdown-toggle" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.25rem;">
+                                        <a href="#" class="nav-dropdown-toggle w-dropdown-toggle" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.25rem;">
                                             <p style="margin: 0;">Services</p>
                                             <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
                                         </a>
@@ -319,7 +320,7 @@
                                     </div>
                                     <div class="nav-divider"></div>
                                     <div data-delay="0" data-hover="true" class="nav-dropdown w-dropdown">
-                                        <a href="solutions.html" class="nav-dropdown-toggle w-dropdown-toggle" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.25rem;">
+                                        <a href="#" class="nav-dropdown-toggle w-dropdown-toggle" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.25rem;">
                                             <p style="margin: 0;">Solutions</p>
                                             <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
                                         </a>
@@ -337,7 +338,7 @@
                                     </div>
                                     <div class="nav-divider"></div>
                                     <div data-delay="0" data-hover="true" class="nav-dropdown w-dropdown">
-                                        <a href="industries.html" class="nav-dropdown-toggle w-dropdown-toggle" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.25rem;">
+                                        <a href="#" class="nav-dropdown-toggle w-dropdown-toggle" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.25rem;">
                                             <p style="margin: 0;">Industries</p>
                                             <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
                                         </a>
@@ -362,10 +363,15 @@
                                 </div>
                             </div>
                         </nav>
-                        <div data-lenis-toggle="" class="nav-burger-link w-nav-button">
-                            <div class="nav-burger-line"></div>
-                            <div class="nav-burger-line is-2"></div>
-                        </div>
+                            <div  class="nav-burger-link w-nav-button">
+                                <div class="nav-burger-inner">
+                                    <div class="nav-burger-icons-wr"><img loading="eager"
+                                            src="resources/67dc026489c617fcaabbb106_menu.svg" alt=""
+                                            class="nav-burger-icon is-1" /><img loading="eager"
+                                            src="resources/67dc02645b95e32899fab030_Close.svg" alt=""
+                                            class="nav-burger-icon is-2" /></div>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -521,7 +527,7 @@
             <div class="container" style="display: flex; flex-direction: column; gap: 3rem;">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
                     <div class="footer-logo-wr" style="display: flex; align-items: center; gap: 0.5rem;">
-                        <img src="resources/now%20logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
+                        <img src="resources/now_logo.png" alt="ArchZen Logo" style="height: 2.2rem; width: auto;" />
                         <img src="resources/archzen_logo_text.png" alt="ArchZen" class="nav-logo-text" />
                     </div>
                     <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
@@ -559,6 +565,8 @@
     <script src="js/webflow.81c3df57.aa0bb3188abb363d.js"
         type="text/javascript" integrity="sha384-uScabh9j8MNI167300pWvkWwyzUwTolouTPamI0QPa3BUI4m9XgthkYYsAsEgI/f"
         crossorigin="anonymous"></script>
+    <script src="js/script.js?v=7"></script>
+    <script src="js/mobile.js"></script>
 </body>
 
 </html>
